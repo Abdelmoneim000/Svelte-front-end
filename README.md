@@ -2,16 +2,18 @@
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-## Creating a project
+## Get started
 
-If you're seeing this, you've probably already done this step. Congrats!
+1. clone this repository into your local machine
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
+git clone https://github.com/Abdelmoneim000/Svelte-front-end.git
+```
 
-# create a new project in my-app
-npm create svelte@latest my-app
+2. change directory to the project folder
+
+```bash
+cd Svelte-front-end
 ```
 
 ## Developing
@@ -36,3 +38,57 @@ npm run build
 You can preview the production build with `npm run preview`.
 
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+
+## Testing
+
+### For Unit Testing
+
+```bash
+npm run test
+```
+
+### For Manual and UI Testing
+
+```bash
+npm run test:ui
+```
+
+[!NOTE]
+> The module for UI testing is still in consideration. It is not yet implemented.
+
+## File Structure
+
+```
+.
+├── README.md
+├── package-lock.json
+├── package.json
+├── src
+│   ├── components  --> Re-usable components. Will be used in pages
+│   │   ├── Button.svelte
+│   │   ├── Header.svelte
+│   │   └── ...
+│   ├── pages --> Pages for the website
+│   │   ├── Home.svelte
+│   │   ├── About.svelte
+│   │   └── ...
+│   ├── lib --> Libraries and functions
+│   │   └── utility.js
+│   └── routes --> routes for every page
+│       ├── index.svelte
+│       ├── about.svelte
+│       └── ...
+├── static --> assets
+│   └── favicon.png
+├── tests --> This is where the tests are located
+│   ├── unit
+│   │   ├── Button.test.js
+│   │   ├── Header.test.js
+│   │   └── ...
+│   └── ui
+│       ├── home.test.js
+│       ├── about.test.js
+│       └── ...
+├── svelte.config.js
+└── vite.config.js
+```
