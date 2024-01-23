@@ -53,7 +53,7 @@ npm run test
 npm run test:ui
 ```
 
-[!NOTE]
+> [!NOTE]
 > The module for UI testing is still in consideration. It is not yet implemented.
 
 ## File Structure
@@ -93,7 +93,7 @@ npm run test:ui
 └── vite.config.js
 ```
 
-[!NOTE]
+> [!NOTE]
 > Next section for devs who are going to work on this project
 
 ## Components used :
