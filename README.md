@@ -92,3 +92,26 @@ npm run test:ui
 ├── svelte.config.js
 └── vite.config.js
 ```
+
+[!NOTE]
+> Next section for devs who are going to work on this project
+
+## Components used :
+
+ - Inside the `src/components` folder, you will find multiple components that are used in the pages. These components are re-usable and can be used in any page.
+
+ - To use a component, Navigate the the page you want to use the component in, and import the component from the `src/components` folder.
+
+ ```HTML
+ <script>
+    import Button from '../components/Button.svelte';
+ </script>
+ ```
+
+ - Then, you can use the component in the page.
+
+ ```HTML
+    <button class="button" style="--color: {color}; --border: {border}; --boxShadow: {boxShadow};">{text}</button>
+ ```
+
+ ------------------------------

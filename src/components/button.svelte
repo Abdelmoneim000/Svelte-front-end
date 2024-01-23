@@ -1,3 +1,5 @@
+<!-- This is a button that takes 4 arguments -->
+
 <script>
     export let text = "Button";
     export let color = "blue";
