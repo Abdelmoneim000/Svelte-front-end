@@ -68,10 +68,6 @@ npm run test:ui
 │   │   ├── Button.svelte
 │   │   ├── Header.svelte
 │   │   └── ...
-│   ├── pages --> Pages for the website
-│   │   ├── Home.svelte
-│   │   ├── About.svelte
-│   │   └── ...
 │   ├── lib --> Libraries and functions
 │   │   └── utility.js
 │   └── routes --> routes for every page

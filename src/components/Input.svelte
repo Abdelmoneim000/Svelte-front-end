@@ -1,33 +1,30 @@
-<!-- Static svelte Input component -->
+<script>
+    export let type = "text";
+    export let label = "Label";
+    export let labelColor = "#9d9d9d";
+    export let labelFontSize = "1.6em";
+    export let width = "100%";
+    export let height = "60px";
+</script>
+
 <style>
-    /**
-    * TODO: make it dynamic input component
-    * Add the following features:
-    * 1. Add media quary for moblies.
-    * 2. Add the ability to change the input type.
-    * 3. Add the ability to change the input placeholder.
-    * 4. Add the ability to change the input label.
-    * 5. Add the ability to change the input label color.
-    * 6. Add the ability to change the input label font size.
-    * 7. Add the ability to the width and height.
-    */
     .container {
-        width: 720px;
+        width: var(--width);
     }
 
     .entryarea {
         position: relative;
-        height: 80px;
-        line-height: 80px;
+        height: var(--height);
+        line-height: var(--height);
     }
 
     input {
         position: absolute;
-        width: 100%;
+        width: 80%;
         outline: none;
         font-size: 2.2em;
         padding: 0 30px;
-        line-height: 80px;
+        line-height: var(--height);
         border-radius: 10px;
         border: 2px solid black;
         background-color: transparent;
@@ -37,8 +34,8 @@
 
     .labelline {
         position: absolute;
-        font-size: 1.6em;
-        color: #545454;
+        font-size: var(--labelFontSize);
+        color: var(--labelColor);
         padding: 0 25px;
         margin: 0px 20px;
         transition: 0.2s ease;
@@ -58,11 +55,34 @@
         color: black;
         z-index: 1111;
     }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        input {
+            width: 400px;
+            font-size: 1.8em;
+        }
+
+        .labelline {
+            font-size: 1.4em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        input {
+            width: 300px;
+            font-size: 1.4em;
+        }
+
+        .labelline {
+            font-size: 1.2em;
+        }
+    }
 </style>
 
-<div class="container">
+<div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor};">
     <div class="entryarea">
-        <input type="text" required>
-        <div class="labelline">Enter your E-mail</div>
+        <input type={type} required>
+        <div class="labelline">{label}</div>
     </div>
 </div>

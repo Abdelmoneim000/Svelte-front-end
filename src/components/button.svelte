@@ -1,18 +1,16 @@
-<!-- This is a button that takes 4 arguments -->
-
 <script>
     export let text = "Button";
-    export let color = "blue";
+    export let color = "black"; // This will be the color of the button text
+    export let backgroundColor = "blue"; // This will be the color of the button background
     export let border = "black";
     export let boxShadow = "none";
 </script>
 
-<!-- button class that takes the argument and implement it in the design-->
 <style>
     .button {
         padding: 10px 20px;
-        background-color: var(--color);
-        color: black;
+        background-color: var(--backgroundColor);
+        color: var(--color);
         border: 2px solid var(--border);
         border-radius: 10px;
         font-size: 1em;
@@ -21,21 +19,21 @@
         transition: all 0.3s ease;
         box-shadow: var(--boxShadow);
     }
-    /**
-    * Hover effect when the mouse is over the button
-    */
     .button:hover {
         opacity: 0.8;
     }
-    /**
-    * Media query for mobile devices
-    */
     @media (max-width: 600px) {
         .button {
             font-size: 0.8em;
         }
     }
+    /* Responsive styles for 480px and less */
+    @media (max-width: 480px) {
+        .button {
+            font-size: 0.7em;
+            padding: 8px 16px;
+        }
+    }
 </style>
 
-<!-- Define the Button element with its arguments-->
-<button class="button" style="--color: {color}; --border: {border}; --boxShadow: {boxShadow};">{text}</button>
+<button class="button" style="--color: {color}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow};">{text}</button>
