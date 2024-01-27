@@ -22,7 +22,7 @@
     input {
         position: absolute;
         width: 100%;
-        height: 85%;
+        height: 100%;
         outline: none;
         font-size: 2.2em;
         padding: 0 30px;
@@ -58,6 +58,18 @@
         z-index: 1111;
     }
 
+    /* Responsive styles for 1024px and less */
+    @media (max-width: 1024px) {
+        input {
+            width: 100%;
+            font-size: 1.8em;
+        }
+
+        .labelline {
+            font-size: 1.4em;
+        }
+    }
+
     /* Responsive styles */
     @media (max-width: 768px) {
         input {
@@ -72,12 +84,23 @@
 
     @media (max-width: 480px) {
         input {
-            width: 250px;
+            width: 105%;
             font-size: 1.4em;
         }
 
         .labelline {
             font-size: 1.2em;
+        }
+    }
+
+    @media (max-width: 320px) {
+        input {
+            width: 200px;
+            font-size: 1.2em;
+        }
+
+        .labelline {
+            font-size: 1em;
         }
     }
 </style>

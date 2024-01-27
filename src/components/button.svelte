@@ -26,9 +26,20 @@
     .button:hover {
         opacity: 0.8;
     }
+
+    /* Responsive styles for 1024px and less */
+    @media (max-width: 1024px) {
+        .button {
+            height: 150%;
+            font-size: 0.8em;
+            width: 15%;
+        }
+    }
+    /* Responsive styles for 600px and less */
     @media (max-width: 600px) {
         .button {
             font-size: 0.8em;
+            width: 30%;
         }
     }
     /* Responsive styles for 480px and less */
@@ -37,6 +48,16 @@
             margin-top: 10%;
             width: 30%;
             height: 50%;
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+    }
+
+    /* Responsive styles for 320px and less */
+    @media (max-width: 320px) {
+        .button {
+            margin-top: 10%;
+            width: 40%;
             font-size: 1em;
             padding: 8px 16px;
         }

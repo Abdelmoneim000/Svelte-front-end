@@ -35,13 +35,32 @@
         justify-content: center;
         align-items: center;
         width: 70%;
-        height: 6%;
+        height: 8%;
         margin-top: 50px;
         margin-left: 10%;
     }
 
     /* Responsive styles */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
+        .container h1 {
+            font-size: 50px;
+        }
+
+        .container p {
+            font-size: 20px;
+        }
+
+        .txt {
+            width: 70%;
+        }
+
+        .submit-form {
+            width: 70%;
+            height: 5%;
+        }
+    }
+
+    @media (max-width: 769px) {
         .container h1 {
             font-size: 40px;
         }
@@ -58,6 +77,8 @@
         .submit-form {
             flex-direction: column;
             width: 80%;
+            height: 15%;
+            gap: 30px;
             margin-left: 0;
         }
     }
@@ -82,6 +103,24 @@
 
         .submit-form {
             width: 90%;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .container h1 {
+            font-size: 25px;
+        }
+
+        .container p {
+            font-size: 14px;
+        }
+
+        .txt {
+            width: 90%;
+        }
+
+        .submit-form {
+            width: 100%;
         }
     }
 </style>
