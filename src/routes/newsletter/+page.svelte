@@ -35,8 +35,8 @@
         justify-content: center;
         align-items: center;
         width: 70%;
+        height: 6%;
         margin-top: 50px;
-        padding: 20px;
         margin-left: 10%;
     }
 
@@ -52,6 +52,7 @@
 
         .txt {
             width: 80%;
+            margin-bottom: 10%;
         }
 
         .submit-form {
@@ -82,7 +83,6 @@
         .submit-form {
             width: 90%;
         }
-
     }
 </style>
   
@@ -92,7 +92,7 @@
         <p>Wanna be the first to know when the next generation of learning programming releases?</p>
     </div>
     <div class="submit-form">
-        <Input label="Email"/>
-        <Button text="Submit" backgroundColor="#FFE37F"/>
+        <Input label="Email" labelFontSize="1.2em"/>
+        <Button text="Submit" backgroundColor="#FFE37F" width="15%" height="100%" />
     </div>
 </div>

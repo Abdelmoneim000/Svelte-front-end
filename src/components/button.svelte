@@ -4,10 +4,14 @@
     export let backgroundColor = "blue"; // This will be the color of the button background
     export let border = "black";
     export let boxShadow = "none";
+    export let width = "100%";
+    export let height = "100%";
 </script>
 
 <style>
     .button {
+        width: var(--width);
+        height: var(--height);
         padding: 10px 20px;
         background-color: var(--backgroundColor);
         color: var(--color);
@@ -30,10 +34,13 @@
     /* Responsive styles for 480px and less */
     @media (max-width: 480px) {
         .button {
-            font-size: 0.7em;
+            margin-top: 10%;
+            width: 30%;
+            height: 50%;
+            font-size: 1em;
             padding: 8px 16px;
         }
     }
 </style>
 
-<button class="button" style="--color: {color}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow};">{text}</button>
+<button class="button" style="--color: {color}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height};">{text}</button>

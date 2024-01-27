@@ -13,6 +13,7 @@
     }
 
     .entryarea {
+        width: 80%;
         position: relative;
         height: var(--height);
         line-height: var(--height);
@@ -20,7 +21,8 @@
 
     input {
         position: absolute;
-        width: 80%;
+        width: 100%;
+        height: 85%;
         outline: none;
         font-size: 2.2em;
         padding: 0 30px;
@@ -36,7 +38,7 @@
         position: absolute;
         font-size: var(--labelFontSize);
         color: var(--labelColor);
-        padding: 0 25px;
+        padding: 0 10px;
         margin: 0px 20px;
         transition: 0.2s ease;
     }
@@ -70,7 +72,7 @@
 
     @media (max-width: 480px) {
         input {
-            width: 300px;
+            width: 250px;
             font-size: 1.4em;
         }
 
