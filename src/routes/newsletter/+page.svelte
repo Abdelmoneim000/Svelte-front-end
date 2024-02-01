@@ -51,6 +51,7 @@
         height: 5%;
         margin-top: 50px;
         margin-left: 10%;
+        gap: 50px;
     }
 
     .message {
@@ -152,7 +153,7 @@
         <p>Wanna be the first to know when the next generation of learning programming releases?</p>
     </div>
     <div class="submit-form">
-        <Input bind:value={email} label="Email" labelFontSize="1em" width="70%" on:blur={validateEmail}/>
+        <Input bind:value={email} label="Email" labelFontSize="1em" width="60%" on:blur={validateEmail}/>
         <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" />
     </div>
     <p class="message">{message}</p>

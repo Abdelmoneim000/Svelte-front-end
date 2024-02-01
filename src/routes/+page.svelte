@@ -1,3 +1,12 @@
-<!-- Please follow the documentation before working on this page -->
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<!-- Home page -->
+<script>
+// Imports and modules go here...
+</script>
+
+<style>
+    /**
+    * Style of the home page  goes here...
+    */
+</style>
+
+<!--Elements and sections go here-->

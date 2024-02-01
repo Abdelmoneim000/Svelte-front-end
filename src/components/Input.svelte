@@ -13,7 +13,7 @@
     }
 
     .entryarea {
-        width: 80%;
+        width: 100%;
         position: relative;
         height: var(--height);
         line-height: var(--height);
@@ -21,7 +21,7 @@
 
     input {
         position: absolute;
-        width: 100%;
+        width: 90%;
         height: 100%;
         outline: none;
         font-size: 1.5em;
