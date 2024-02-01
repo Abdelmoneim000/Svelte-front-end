@@ -3,8 +3,8 @@
     export let label = "Label";
     export let labelColor = "#9d9d9d";
     export let labelFontSize = "1.6em";
-    export let width = "100%";
-    export let height = "45px";
+    export let width = "60%";
+    export let height = "50px";
 </script>
 
 <style>
@@ -60,9 +60,13 @@
 
     /* Responsive styles for 1024px and less */
     @media (max-width: 1024px) {
+        .container {
+            height: fit-content;
+        }
         input {
             width: 100%;
             font-size: 1.8em;
+            height: 47px;
         }
 
         .labelline {
@@ -73,7 +77,7 @@
     /* Responsive styles */
     @media (max-width: 768px) {
         input {
-            width: 400px;
+            width: 100%;
             font-size: 1.8em;
         }
 
@@ -95,8 +99,9 @@
 
     @media (max-width: 320px) {
         input {
-            width: 200px;
-            font-size: 1.2em;
+            width: 150px;
+            font-size: 1em;
+            font-weight: 600;
         }
 
         .labelline {
@@ -107,7 +112,7 @@
 
 <div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor};">
     <div class="entryarea">
-        <input type={type} required>
+        <input type={type} required id="email" autocomplete="email">
         <div class="labelline">{label}</div>
     </div>
 </div>

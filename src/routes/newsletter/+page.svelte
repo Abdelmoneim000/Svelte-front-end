@@ -1,6 +1,19 @@
 <script>
     import Input from "../../components/Input.svelte";
     import Button from "../../components/button.svelte";
+
+    // Email validator
+    let email = '';
+    let message = '';
+
+    const validateEmail = () => {
+        const re = /\S+@\S+\.\S+/;
+        if (!re.test(email)) {
+            message = 'Email is incorrect';
+        } else {
+            message = '';
+        }
+    };
 </script>
 
 <style>
@@ -32,12 +45,16 @@
     .submit-form {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: left;
         align-items: center;
         width: 70%;
         height: 5%;
         margin-top: 50px;
         margin-left: 10%;
+    }
+
+    .message {
+        color: green;
     }
 
     /* Responsive styles */
@@ -55,8 +72,9 @@
         }
 
         .submit-form {
-            width: 70%;
+            width: 75%;
             height: 5%;
+            margin-left: 3%;
         }
     }
 
@@ -71,13 +89,15 @@
 
         .txt {
             width: 80%;
-            margin-bottom: 10%;
+            margin-bottom: 0%;
         }
 
         .submit-form {
+            margin-top: 3%;
             flex-direction: column;
+            justify-content: left;
             width: 80%;
-            height: 15%;
+            height: 30%;
             gap: 30px;
             margin-left: 0;
         }
@@ -121,6 +141,7 @@
 
         .submit-form {
             width: 100%;
+            margin-left: 0;
         }
     }
 </style>
@@ -131,7 +152,8 @@
         <p>Wanna be the first to know when the next generation of learning programming releases?</p>
     </div>
     <div class="submit-form">
-        <Input label="Email" labelFontSize="1em"/>
-        <Button text="Submit" backgroundColor="#FFE37F" width="15%" height="100%" />
+        <Input bind:value={email} label="Email" labelFontSize="1em" width="70%" on:blur={validateEmail}/>
+        <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" />
     </div>
+    <p class="message">{message}</p>
 </div>

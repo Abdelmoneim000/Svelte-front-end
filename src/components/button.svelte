@@ -4,7 +4,7 @@
     export let backgroundColor = "blue"; // This will be the color of the button background
     export let border = "black";
     export let boxShadow = "none";
-    export let width = "100%";
+    export let width = "20%";
     export let height = "100%";
 </script>
 
@@ -16,8 +16,8 @@
         color: var(--color);
         border: 2px solid var(--border);
         border-radius: 10px;
-        font-size: 1em;
-        font-weight: bold;
+        font-size: 1.2em;
+        font-weight: 750;
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: var(--boxShadow);
@@ -29,15 +29,24 @@
     /* Responsive styles for 1024px and less */
     @media (max-width: 1024px) {
         .button {
-            height: 150%;
+            height: 140%;
+            width: 18%;
+        }
+    }
+
+    /* Responsive styles for 768px and less */
+    @media (max-width: 768px) {
+        .button {
+            font-size: 1.1em;
+            height: 20%;
             width: 20%;
         }
     }
     /* Responsive styles for 600px and less */
     @media (max-width: 600px) {
         .button {
-            font-size: 0.8em;
-            width: 30%;
+            font-size: 1em;
+            width: 23%;
         }
     }
     /* Responsive styles for 480px and less */
