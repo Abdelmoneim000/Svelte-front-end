@@ -12,7 +12,6 @@
     .button {
         width: var(--width);
         height: var(--height);
-        padding: 10px 20px;
         background-color: var(--backgroundColor);
         color: var(--color);
         border: 2px solid var(--border);
@@ -31,8 +30,7 @@
     @media (max-width: 1024px) {
         .button {
             height: 150%;
-            font-size: 0.8em;
-            width: 15%;
+            width: 20%;
         }
     }
     /* Responsive styles for 600px and less */
@@ -45,21 +43,19 @@
     /* Responsive styles for 480px and less */
     @media (max-width: 480px) {
         .button {
-            margin-top: 10%;
-            width: 30%;
-            height: 50%;
+            margin-top: 3%;
+            width: 100px;
+            height: 40px;
             font-size: 1em;
-            padding: 8px 16px;
         }
     }
 
     /* Responsive styles for 320px and less */
     @media (max-width: 320px) {
         .button {
-            margin-top: 10%;
+            margin-top: 1%;
             width: 40%;
             font-size: 1em;
-            padding: 8px 16px;
         }
     }
 </style>

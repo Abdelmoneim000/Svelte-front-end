@@ -21,7 +21,7 @@
 
     .container p {
         font-style: normal;
-        font-weight: 600px;
+        font-weight: 600;
         font-size: 20px;
     }
 
@@ -35,7 +35,7 @@
         justify-content: center;
         align-items: center;
         width: 70%;
-        height: 8%;
+        height: 5%;
         margin-top: 50px;
         margin-left: 10%;
     }
@@ -131,7 +131,7 @@
         <p>Wanna be the first to know when the next generation of learning programming releases?</p>
     </div>
     <div class="submit-form">
-        <Input label="Email" labelFontSize="1.2em"/>
+        <Input label="Email" labelFontSize="1em"/>
         <Button text="Submit" backgroundColor="#FFE37F" width="15%" height="100%" />
     </div>
 </div>

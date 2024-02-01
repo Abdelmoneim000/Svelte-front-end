@@ -4,7 +4,7 @@
     export let labelColor = "#9d9d9d";
     export let labelFontSize = "1.6em";
     export let width = "100%";
-    export let height = "60px";
+    export let height = "45px";
 </script>
 
 <style>
@@ -24,7 +24,7 @@
         width: 100%;
         height: 100%;
         outline: none;
-        font-size: 2.2em;
+        font-size: 1.5em;
         padding: 0 30px;
         line-height: var(--height);
         border-radius: 10px;
