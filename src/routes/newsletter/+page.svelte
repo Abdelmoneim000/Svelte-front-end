@@ -4,14 +4,23 @@
 
     // Email validator
     let email = '';
-    let message = '';
+    let message = 'hello world!';
+    let validated = true;
 
     const validateEmail = () => {
+        
         const re = /\S+@\S+\.\S+/;
         if (!re.test(email)) {
             message = 'Email is incorrect';
         } else {
             message = '';
+
+            // Send the email to the backend
+            if (!validated) {
+                message = 'There was an error submitting your email. Please try again.';
+            } else {
+                message = 'Email submitted successfully!';
+            }
         }
     };
 </script>
@@ -56,6 +65,7 @@
 
     .message {
         color: green;
+        margin-top: 10%;
     }
 
     /* Responsive styles */
@@ -153,8 +163,8 @@
         <p>Wanna be the first to know when the next generation of learning programming releases?</p>
     </div>
     <div class="submit-form">
-        <Input bind:value={email} label="Email" labelFontSize="1em" width="60%" on:blur={validateEmail}/>
-        <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" />
+        <Input bind:value={email} label="Email" labelFontSize="1em" width="60%" />
+        <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" on:click={validateEmail} />
     </div>
     <p class="message">{message}</p>
 </div>

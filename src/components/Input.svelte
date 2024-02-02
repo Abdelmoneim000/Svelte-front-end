@@ -1,10 +1,17 @@
 <script>
-    export let type = "text";
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
     export let label = "Label";
     export let labelColor = "#9d9d9d";
     export let labelFontSize = "1.6em";
     export let width = "60%";
     export let height = "50px";
+    export let value = "";
+
+    function handleChange(event) {
+        dispatch('input', event.target.value);
+    }
 </script>
 
 <style>
@@ -112,7 +119,7 @@
 
 <div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor};">
     <div class="entryarea">
-        <input type={type} required id="email" autocomplete="email">
+        <input type="text" required id="email" autocomplete="email" value={value} on:input={handleChange}>
         <div class="labelline">{label}</div>
     </div>
 </div>
