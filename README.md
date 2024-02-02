@@ -71,8 +71,9 @@ npm run test:ui
 │   ├── lib --> Libraries and functions
 │   │   └── utility.js
 │   └── routes --> routes for every page
-│       ├── index.svelte
-│       ├── about.svelte
+│       ├── +page.svelte
+│       ├── newsletter
+│       │   ├── +page.svelte
 │       └── ...
 ├── static --> assets
 │   └── favicon.png

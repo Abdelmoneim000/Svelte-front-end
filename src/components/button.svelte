@@ -69,4 +69,5 @@
     }
 </style>
 
+<!-- Button component with on:click Event to be customized -->
 <button class="button" style="--color: {color}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height};" on:click>{text}</button>

@@ -2,11 +2,15 @@
     import Input from "../../components/Input.svelte";
     import Button from "../../components/button.svelte";
 
-    // Email validator
+    // NOTE!!!: This is a dummy email submission form. It does not submit the email to the backend.
+    // email variable is updated using two-way binding inside the Input component.
     let email = '';
     let message = 'hello world!';
     let validated = true;
-
+    /**
+     * Validate the email input field.
+     * @returns {void}
+     */
     const validateEmail = () => {
         
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
