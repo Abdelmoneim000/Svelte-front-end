@@ -15,7 +15,7 @@
         
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!re.test(email)) {
-            message = 'Email is incorrect';
+            message = 'Invalid email address. Please try again.';
             validated = false;
         } else {
             message = '';
@@ -25,7 +25,7 @@
             if (!validated) {
                 message = 'There was an error submitting your email. Please try again.';
             } else {
-                message = 'Email submitted successfully!';
+                message = 'You\'re on the list. We\'ll Email you soon.';
             }
         }
     };
@@ -98,6 +98,10 @@
             margin-left: 3%;
             justify-content: space-around;
         }
+
+        .message p {
+            padding-top: 1%;
+        }
     }
 
     @media (max-width: 769px) {
@@ -122,6 +126,10 @@
             height: 30%;
             gap: 30px;
             margin-left: 0;
+        }
+
+        .message p {
+            padding-top: 2%;
         }
     }
 
@@ -178,10 +186,10 @@
         <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" on:click={validateEmail} />
     </div>
     <div class="message">
-        {#if validated && message === 'Email submitted successfully!'}
+        {#if validated && message === 'You\'re on the list. We\'ll Email you soon.'}
         <div style="width: 10px; height: 60px; background-color: #039700; border-radius: 20px"></div>
         <p style="margin-top: 2%; color : #039700;">{message}</p>
-        {:else if !validated && message === 'Email is incorrect'}
+        {:else if !validated && message === 'Invalid email address. Please try again.'}
         <div style="width: 10px; height: 60px; background-color: #F00000; border-radius: 20px"></div>
         <p style="margin-top: 2%; color : #F00000;">{message}</p>
         {/if}
