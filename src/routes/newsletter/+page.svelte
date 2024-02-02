@@ -5,7 +5,7 @@
     // NOTE!!!: This is a dummy email submission form. It does not submit the email to the backend.
     // email variable is updated using two-way binding inside the Input component.
     let email = '';
-    let message = 'hello world!';
+    let message = '';
     let validated = true;
     /**
      * Validate the email input field.
@@ -16,8 +16,10 @@
         const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!re.test(email)) {
             message = 'Email is incorrect';
+            validated = false;
         } else {
             message = '';
+            validated = true;
 
             // Send the email to the backend
             if (!validated) {
@@ -68,8 +70,12 @@
     }
 
     .message {
-        color: green;
-        margin-top: 10%;
+        width: 60%;
+        margin-top: 5%;
+        display: flex;
+        gap: 20px;
+        justify-content: left;
+        text-align: center;
     }
 
     /* Responsive styles */
@@ -90,6 +96,7 @@
             width: 75%;
             height: 5%;
             margin-left: 3%;
+            justify-content: space-around;
         }
     }
 
@@ -170,5 +177,13 @@
         <Input bind:value={email} label="Email" labelFontSize="1em" width="60%" />
         <Button text="Submit" backgroundColor="#FFE37F" width="110px" height="50px" on:click={validateEmail} />
     </div>
-    <p class="message">{message}</p>
+    <div class="message">
+        {#if validated && message === 'Email submitted successfully!'}
+        <div style="width: 10px; height: 60px; background-color: #039700; border-radius: 20px"></div>
+        <p style="margin-top: 2%; color : #039700;">{message}</p>
+        {:else if !validated && message === 'Email is incorrect'}
+        <div style="width: 10px; height: 60px; background-color: #F00000; border-radius: 20px"></div>
+        <p style="margin-top: 2%; color : #F00000;">{message}</p>
+        {/if}
+    </div>
 </div>

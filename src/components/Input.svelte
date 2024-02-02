@@ -87,6 +87,10 @@
 
     /* Responsive styles */
     @media (max-width: 768px) {
+        .container {
+            width: 90%;
+            margin-right: 10%;
+        }
         input {
             width: 100%;
             font-size: 1.8em;
@@ -99,7 +103,7 @@
 
     @media (max-width: 480px) {
         input {
-            width: 105%;
+            width: 90%;
             font-size: 1.4em;
         }
 
@@ -109,8 +113,12 @@
     }
 
     @media (max-width: 320px) {
+        .container {
+            margin: 0;
+            padding-right: 15px;
+        }
         input {
-            width: 150px;
+            width: 80%;
             font-size: 1em;
             font-weight: 600;
         }
