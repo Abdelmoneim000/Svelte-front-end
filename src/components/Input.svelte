@@ -10,7 +10,8 @@
     export let value = "";
 
     function handleChange(event) {
-        dispatch('input', event.target.value);
+        value = event.target.value;
+        dispatch('input', value);
     }
 </script>
 
@@ -119,7 +120,7 @@
 
 <div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor};">
     <div class="entryarea">
-        <input type="text" required id="email" autocomplete="email" value={value} on:input={handleChange}>
+        <input type="text" required id="email" autocomplete="email" bind:value={value} on:input={handleChange}>
         <div class="labelline">{label}</div>
     </div>
 </div>
