@@ -1,13 +1,34 @@
 <!-- Home page -->
 <script>
-  import Button from "../components/button.svelte";
-
+    import Button from "../components/button.svelte";
+    import { onMount } from 'svelte';
+  
     let selected = "Home"; // Default selected nav item works as a state.
     const navText = ["Home", "Sign In", "Sign Up"];
-
+  
     const selectItem = (item) => {
         selected = item;
     };
+  
+    onMount(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Use the 'isIntersecting' property to check if the entry is in view
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('fadeIn');
+                } else {
+                    // Optional: Remove the class if you want the animation to trigger every time the section comes into view
+                    // entry.target.classList.remove('fadeIn');
+                }
+            });
+        }, { threshold: 0.1 }); // Adjust the threshold as needed
+  
+        // Observe the '.Intro' section
+        const introSection = document.querySelector('.Intro');
+        if (introSection) {
+            observer.observe(introSection);
+        }
+    });
 </script>
 
 <style>
@@ -59,7 +80,7 @@
         flex-direction: column;
         align-items: center;
         height: 60vh;
-        animation : fadeIn 1s ease;
+        animation: fadeIn 1s ease-in-out forwards;
     }
 
     @media (max-width: 320px) {
@@ -101,7 +122,7 @@
 <header class="Intro" style="">
     <h1 style="font-size: 55px;">Learn Coding Fast.</h1>
     <p style="font-weight: 600; font-size: 22px; margin-bottom: 3%">PolyLabs is a platform to quickly and efficiently learn programming.</p>
-    <Button 
+    <Button
         width="10%"
         height="50px"
         text="Learn more"
