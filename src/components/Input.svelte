@@ -6,7 +6,7 @@
     // Component properties
     export let label = "Label";
     export let labelColor = "#9d9d9d";
-    export let labelFontSize = "1.6em";
+    export let labelFontSize = "1em";
     export let width = "60%";
     export let height = "50px";
     export let value = "";
@@ -35,7 +35,7 @@
         width: 90%;
         height: 100%;
         outline: none;
-        font-size: 1.5em;
+        font-size: 1.3em;
         padding: 0 30px;
         line-height: var(--height);
         border-radius: 10px;
@@ -52,11 +52,9 @@
         padding: 0 10px;
         margin: 0px 20px;
         transition: 0.2s ease;
+        font-weight: 600;
     }
 
-    input:focus, input:valid {
-        border: 4px solid black;
-    }
 
     input:focus + .labelline, input:valid + .labelline {
         height: 30px;
@@ -76,7 +74,7 @@
         }
         input {
             width: 100%;
-            font-size: 1.8em;
+            font-size: 1em;
             height: 47px;
         }
 

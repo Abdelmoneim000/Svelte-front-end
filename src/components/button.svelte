@@ -6,13 +6,13 @@
     export let borderRadius = "10px";
     export let boxShadow = "none";
     export let width = "20%";
-    export let height = "100%";
+    export let height = "53px";
 </script>
 
 <style>
     .button {
         width: var(--width);
-        height: var(--height);
+        height: 53px !important;
         background-color: var(--backgroundColor);
         color: var(--color);
         border: var(--border);
