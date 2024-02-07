@@ -2,7 +2,8 @@
     export let text = "Button";
     export let color = "black"; // This will be the color of the button text
     export let backgroundColor = "blue"; // This will be the color of the button background
-    export let border = "black";
+    export let border = "2px solid black";
+    export let borderRadius = "10px";
     export let boxShadow = "none";
     export let width = "20%";
     export let height = "100%";
@@ -14,8 +15,8 @@
         height: var(--height);
         background-color: var(--backgroundColor);
         color: var(--color);
-        border: 2px solid var(--border);
-        border-radius: 10px;
+        border: var(--border);
+        border-radius: var(--borderRadius);
         font-size: 1.2em;
         font-weight: 750;
         cursor: pointer;
@@ -70,4 +71,4 @@
 </style>
 
 <!-- Button component with on:click Event to be customized -->
-<button class="button" style="--color: {color}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height};" on:click>{text}</button>
+<button class="button" style="--color: {color}; --borderRadius: {borderRadius}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height};" on:click>{text}</button>

@@ -13,12 +13,11 @@
 <style>
     :global(body) {
         background-color: #F7F7F7;
-        font-family: Inter;
+        font-family: 'Inter';
     }
     .HomeBody {
         width: 100%;
         height: fit-content;
-        font-family: Inter;
     }
     .Menu {
         margin-top: 5%;
@@ -54,17 +53,33 @@
     }
 
     .Intro {
+        margin-top: 3%;
         text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        margin-top: 3%;
+        height: 60vh;
+        animation : fadeIn 1s ease;
     }
 
     @media (max-width: 320px) {
         .Menu div {
             width: 32%;
+        }
+    }
+
+    /**
+    * Animation for the page.
+    * making the page content move and appear when it is loaded.
+    */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 
@@ -85,12 +100,17 @@
 
 <header class="Intro" style="">
     <h1 style="font-size: 55px;">Learn Coding Fast.</h1>
-    <p style="font-weight: 600; font-size: 20px; margin-bottom: 3%">PolyLabs is a platform to quickly and efficiently learn programming.</p>
+    <p style="font-weight: 600; font-size: 22px; margin-bottom: 3%">PolyLabs is a platform to quickly and efficiently learn programming.</p>
     <Button 
-        width="8%"
-        height="10%"
+        width="10%"
+        height="50px"
         text="Learn more"
+        border= "1px solid #000000"
         backgroundColor="#FFE37F"
-        boxShadow="5px 3px 1px #000000"
+        boxShadow="0px 4px 20px 0px #00000033"
+        borderRadius="5px"
     />
 </header>
+<section>
+    <h1>Meet "Kernel"</h1>
+</section>
