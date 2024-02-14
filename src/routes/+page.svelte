@@ -2,10 +2,14 @@
 <script>
     import Button from "../components/button.svelte";
     import { onMount } from 'svelte';
+    import { writable } from 'svelte/store';
+    import ChatBox from '../components/chatBox.svelte';
   
     let selected = "Home"; // Default selected nav item works as a state.
     const navText = ["Home", "Sign In", "Sign Up"];
-  
+    let messages = writable([]);
+
+
     const selectItem = (item) => {
         selected = item;
     };
@@ -83,6 +87,17 @@
         animation: fadeIn 1s ease-in-out forwards;
     }
 
+    section {
+        margin-left: 10%;
+    }
+
+    section > h1 {
+        font-size: 50px;
+        font-family: 'Inter';
+        font-weight: 700;
+        margin-bottom: 5%;
+    }
+
     @media (max-width: 320px) {
         .Menu div {
             width: 32%;
@@ -133,5 +148,8 @@
     />
 </header>
 <section>
-    <h1>Meet "Kernel"</h1>
+    <h1>Meet “<span style="font-size: 50px; font-family: IBM Plex Mono;">Kernel</span>”</h1>
+    <div class="container">
+        <ChatBox {messages} />
+    </div>
 </section>
