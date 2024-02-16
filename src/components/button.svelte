@@ -7,17 +7,18 @@
     export let boxShadow = "none";
     export let width = "20%";
     export let height = "53px";
+    export let fontSize = "1.2em";
 </script>
 
 <style>
     .button {
         width: var(--width);
-        height: 53px !important;
+        height: var(--height) !important;
         background-color: var(--backgroundColor);
         color: var(--color);
         border: var(--border);
         border-radius: var(--borderRadius);
-        font-size: 1.2em;
+        font-size: var(--fontSize);
         font-weight: 750;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -71,4 +72,4 @@
 </style>
 
 <!-- Button component with on:click Event to be customized -->
-<button class="button" style="--color: {color}; --borderRadius: {borderRadius}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height};" on:click>{text}</button>
+<button class="button" style="--color: {color}; --borderRadius: {borderRadius}; --backgroundColor: {backgroundColor}; --border: {border}; --boxShadow: {boxShadow}; --width: {width}; --height: {height}; --fontSize: {fontSize}" on:click>{text}</button>

@@ -10,6 +10,7 @@
     export let width = "60%";
     export let height = "50px";
     export let value = "";
+    export let fontSize = "1em";
 
     // Event handler for the input event.
     function handleChange(event) {
@@ -35,7 +36,7 @@
         width: 90%;
         height: 100%;
         outline: none;
-        font-size: 1.3em;
+        font-size: var(--fontSize);
         padding: 0 30px;
         line-height: var(--height);
         border-radius: 10px;
@@ -127,7 +128,7 @@
     }
 </style>
 <!-- The input component (with two-way binding)-->
-<div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor};">
+<div class="container" style="--width: {width}; --height: {height}; --labelFontSize: {labelFontSize}; --labelColor: {labelColor}; --fontSize: {fontSize};">
     <div class="entryarea">
         <input type="text" required id="email" autocomplete="email" bind:value={value} on:input={handleChange}>
         <div class="labelline">{label}</div>
