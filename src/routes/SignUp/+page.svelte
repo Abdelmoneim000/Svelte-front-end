@@ -14,6 +14,7 @@
   let passwordSubmitted = false;
   let validated = false;
   let submittedData = false;
+  let validEmail = "";
   let message = "";
   let agreeToTerms = false;
   let BeginAccountSetup = false;
@@ -116,6 +117,12 @@
             </div>
           {/if}
         </div>
+        {#if validEmail !== ""}
+        <div style="display: flex; flex-direction:row; gap: 30px; margin-top: 3%">
+          <div style="width: 10px; height: 60px; background-color: #F00000; border-radius: 20px"></div>
+          <p style="margin-top: 1.5%; color : #F00000;">{validEmail}</p>
+          </div>
+        {/if}
       </div>
     {/if}
 

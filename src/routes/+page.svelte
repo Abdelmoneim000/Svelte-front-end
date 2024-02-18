@@ -1,8 +1,13 @@
 
 <script>
-    import Button from "../components/button.svelte";
-    import chat from "../assets/Chat.svg";
-    import Lessons from "../assets/Lessons.svg";
+  import Button from "../components/button.svelte";
+  import chat from "../assets/Chat.svg";
+  import Lessons from "../assets/Lessons.svg";
+  import Github from "../assets/Github.svg";
+  import email from "../assets/email.svg";
+  import Twitter from "../assets/Twitter.svg";
+  import Google from "../assets/Google.svg";
+  import { goto } from "$app/navigation";
 
     let selected = "Home"; // Default selected nav item works as a state.
     const navText = ["Home", "Sign In", "Sign Up"]; // Navigation items
@@ -27,16 +32,67 @@
     </nav>
 </div>
 
-<!-- Main Header -->
-
+<!-- Sign-in page -->
 {#if selected === "Sign In"}
-    <h1>Sign In</h1>
+<header class="Intro">
+  <h1 style="font-size: 55px;">Sign into PolyLabs</h1>
+  <p
+    style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
+  >
+  Select your preferred method of authentication
+  </p>
+  <div style="display: flex; Justify-content:center; align-items:center; flex-wrap:wrap; width:60%; gap: 50px;">
+    <div class="Sign-up-in-button">
+      <img src={Github} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Github</p>
+    </div>
+    <div class="Sign-up-in-button">
+      <img src={Twitter} alt="Google"  />
+      <p style="font-weight: 700; font-size: 28px;">Twitter</p>
+    </div>
+    <div class="Sign-up-in-button">
+      <img src={Google} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Google</p>
+    </div>
+    <div class="Sign-up-in-button" on:click={() => {goto("/SignIn")}}>
+      <img src={email} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Email</p>
+    </div>
+  </div>
+</header>
 {/if}
 
+<!-- Sign Up page -->
 {#if selected === "Sign Up"}
-    <h1>Sign Up</h1>
+<header class="Intro">
+  <h1 style="font-size: 55px;">Sign Up for PolyLabs</h1>
+  <p
+    style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
+  >
+  Select your preferred method of authentication
+  </p>
+  <div style="display: flex; Justify-content:center; align-items:center; flex-wrap:wrap; width:60%; gap: 50px;">
+    <div class="Sign-up-in-button">
+      <img src={Github} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Github</p>
+    </div>
+    <div class="Sign-up-in-button">
+      <img src={Twitter} alt="Google"  />
+      <p style="font-weight: 700; font-size: 28px;">Twitter</p>
+    </div>
+    <div class="Sign-up-in-button">
+      <img src={Google} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Google</p>
+    </div>
+    <div class="Sign-up-in-button" on:click={() => {goto("/SignUp")}}>
+      <img src={email} alt="Google" />
+      <p style="font-weight: 700; font-size: 28px;">Email</p>
+    </div>
+  </div>
+</header>
 {/if}
 
+<!-- Main Header -->
 {#if selected === "Home"}
 <header class="Intro">
     <h1 style="font-size: 55px;">Learn Coding Fast.</h1>
@@ -130,6 +186,7 @@
     boxShadow="0px 4px 20px 0px #00000033"
     borderRadius="12px"
     fontSize="22px"
+    on:click={() => {selectItem("Sign Up")}}
   />
 </section>
 
@@ -193,6 +250,27 @@
     align-items: center;
     height: 60vh;
     animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .Sign-up-in-button {
+    width: 250px;
+    height: 70px;
+    border: 1.44px solid #000000;
+    border-radius: 11.52px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-left: 50px;
+    cursor: pointer;
+  }
+
+  .Sign-up-in-button:hover {
+    background-color: #f0f0f0;
+  }
+
+  .Sign-up-in-button img {
+    width: 50px;
+    height: 50px;
   }
 
   section {
