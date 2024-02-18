@@ -184,6 +184,7 @@
     boxShadow="0px 4px 20px 0px #00000033"
     borderRadius="12px"
     fontSize="22px"
+    on:click={() => {selectItem("Sign Up")}}
   />
 </section>
 
