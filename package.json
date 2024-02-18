@@ -7,8 +7,12 @@
 	  "build": "vite build",
 	  "preview": "vite preview",
 	  "test:unit": "jest",
-	  "test:ui": "cypress open"
-	},
+	  "test:ui": "cypress open",
+	  "postinstall": "npm run patch-vue-compiler-sfc",
+	"patch-vue-compiler-sfc": "patch --ignore-whitespace -p0 --forward < vue-compiler-sfc.patch || true"
+	  },
+	
+		
 	"devDependencies": {
 	  "@sveltejs/adapter-auto": "^3.0.0",
 	  "@sveltejs/kit": "^2.0.0",

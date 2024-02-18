@@ -1,100 +1,102 @@
-<!-- Home page -->
+
 <script>
-  import Button from "../components/button.svelte";
-  import chat from "../assets/Chat.svg";
-  import Lessons from "../assets/Lessons.svg";
+    import Button from "../components/button.svelte";
+    import chat from "../assets/Chat.svg";
+    import Lessons from "../assets/Lessons.svg";
 
-  let selected = "Home"; // Default selected nav item works as a state.
-  const navText = ["Home", "Sign In", "Sign Up"]; // Navigation items
+    let selected = "Home"; // Default selected nav item works as a state.
+    const navText = ["Home", "Sign In", "Sign Up"]; // Navigation items
 
-  const selectItem = (item) => {
-    selected = item;
-  };
+    const selectItem = (item) => {
+        selected = item;
+    };
 </script>
 
 <!--Elements and sections go here-->
 
 <!--Navigation bar-->
 <div class="HomeBody">
-  <nav class="Menu">
-    {#each navText as text (text)}
-      <div class:selected={selected === text} on:click={() => selectItem(text)}>
+    <nav class="Menu">
+{#each navText as text (text)}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class:selected={selected === text} on:click={() => selectItem(text)}>
         {text}
-      </div>
-    {/each}
-  </nav>
+    </div>
+{/each}
+    </nav>
 </div>
 
 <!-- Main Header -->
 
 {#if selected === "Sign In"}
-  <h1>Sign In</h1>
+    <h1>Sign In</h1>
 {/if}
 
 {#if selected === "Sign Up"}
-  <h1>Sign Up</h1>
+    <h1>Sign Up</h1>
 {/if}
 
 {#if selected === "Home"}
 <header class="Intro">
-  <h1 style="font-size: 55px;">Learn Coding Fast.</h1>
-  <p
-    style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
-  >
-    PolyLabs is a platform to quickly and efficiently learn programming.
-  </p>
-  <Button
-    width="10%"
-    height="50px"
-    text="Learn more"
-    border="1px solid #000000"
-    backgroundColor="#FFE37F"
-    boxShadow="0px 4px 20px 0px #00000033"
-    borderRadius="5px"
-  />
+    <h1 style="font-size: 55px;">Learn Coding Fast.</h1>
+    <p
+        style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
+    >
+        PolyLabs is a platform to quickly and efficiently learn programming.
+    </p>
+    <Button
+        width="10%"
+        height="50px"
+        text="Learn more"
+        border="1px solid #000000"
+        backgroundColor="#FFE37F"
+        boxShadow="0px 4px 20px 0px #00000033"
+        borderRadius="5px"
+    />
 </header>
 <section>
-  <h1>
-    Meet “<span style="font-size: 50px; font-family: IBM Plex Mono;"
-      >Kernel</span
-    >”
-  </h1>
-  <div class="container" style="margin-left: -10%; margin-top : -1%">
-    <div style="display: flex; flex-direction: column; width: 40%; height: 40%;">
-        <img src={chat} alt="Chat" style="width: 100%; height: 100%;" />
-        <p style="font-weight: 400; margin-left : 17%; margin-top: -5%">*Polylabs base has 300 messages/day for free</p>
+    <h1>
+        Meet “<span style="font-size: 50px; font-family: IBM Plex Mono;"
+            >Kernel</span
+        >”
+    </h1>
+    <div class="container" style="margin-left: -10%; margin-top : -1%">
+        <div style="display: flex; flex-direction: column; width: 40%; height: 40%;">
+                <img src={chat} alt="Chat" style="width: 100%; height: 100%;" />
+                <p style="font-weight: 400; margin-left : 17%; margin-top: -5%">*Polylabs base has 300 messages/day for free</p>
+        </div>
+        <p style="font-weight: 400; font-family : Inter;">
+            Use our free AI powered chatbot to help assist you in your coding
+            struggles*. Kernel has access to your learning prompt and your code, so it
+            can fully help you.
+        </p>
     </div>
-    <p style="font-weight: 400; font-family : Inter;">
-      Use our free AI powered chatbot to help assist you in your coding
-      struggles*. Kernel has access to your learning prompt and your code, so it
-      can fully help you.
-    </p>
-  </div>
 </section>
 
 <section style="margin-top: 10%;">
-    <h1 style="font-size: 57px;">
-        Customized Content
-    </h1>
-    <div class="container" style="margin-left: -10%; margin-top : -1%; flex-direction: row-reverse; height: fit-content;">
-      <div class="features" >
-        <h1>Lesson 1</h1>
-        <div style="background-color: #C7C7C7; width: 100%; height: 5px; border-radius: 10px;"></div>
-        <p>Let’s do a quick review of lessons 1 & 2</p>
-        <h2>Thinking 💭</h2>
-        <p>Look to the code, what do you <span style="font-weight: 900;">think</span> it does?</p>
-        <h2>Test it 🧪</h2>
-        <p>Prove yourself right or wrong by clicking run.</p>
-    </div>
-      <div style="display: flex; flex-direction:column; width: 40%; height: 100%;">
-        <p style="font-weight: 400; font-family : Inter; font-size: 29px;">
-            Polylabs customizes learning prompts using past experience to ensure that you absorb the most amount of content as possible.
-          </p>
-          <p style="font-weight: 400; font-family : Inter; font-size: 29px;">
-            Polylabs is proud to say that our learning process is based to help you come to conclusions, instead of us blatantly telling you the answers.
-          </p>
-      </div>
-    </div>
+        <h1 style="font-size: 57px;">
+                Customized Content
+        </h1>
+        <div class="container" style="margin-left: -10%; margin-top : -1%; flex-direction: row-reverse; height: fit-content;">
+            <div class="features" >
+                <h1>Lesson 1</h1>
+                <div style="background-color: #C7C7C7; width: 100%; height: 5px; border-radius: 10px;"></div>
+                <p>Let’s do a quick review of lessons 1 & 2</p>
+                <h2>Thinking 💭</h2>
+                <p>Look to the code, what do you <span style="font-weight: 900;">think</span> it does?</p>
+                <h2>Test it 🧪</h2>
+                <p>Prove yourself right or wrong by clicking run.</p>
+        </div>
+            <div style="display: flex; flex-direction:column; width: 40%; height: 100%;">
+                <p style="font-weight: 400; font-family : Inter; font-size: 29px;">
+                        Polylabs customizes learning prompts using past experience to ensure that you absorb the most amount of content as possible.
+                    </p>
+                    <p style="font-weight: 400; font-family : Inter; font-size: 29px;">
+                        Polylabs is proud to say that our learning process is based to help you come to conclusions, instead of us blatantly telling you the answers.
+                    </p>
+            </div>
+        </div>
 </section>
 
 <section style="margin-top: 10%;">

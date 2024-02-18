@@ -21,13 +21,18 @@
   let Description = "";
   let CodingSkills = 0;
   let Greetings = false;
+  let invalidEmail = false;
+  let reason = "";
+  let invalidPassword = false;
 
   const validateEmail = () => {
     const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!re.test(email)) {
       validated = false;
+      invalidEmail = true;
     } else {
       validated = true;
+      invalidEmail = false;
     }
   };
     // Check password for 8 characters, 1 letter, and 1 number.
@@ -42,8 +47,23 @@
 
   // first password submission
   const submitPassword = () => {
-    if (password) {
-      passwordSubmitted = true;
+    if (password.length >= 8){
+      if(password.match(/[a-z]/i)){
+        if(password.match(/\d/)){
+          passwordSubmitted = true;
+          invalidPassword = false;
+        } else {
+          invalidPassword = true;
+          reason = "Password must contain at least 1 number"
+        }
+      } else {
+        invalidPassword = true;
+        reason = "Password must contain at least 1 letter"
+      }
+
+    } else {
+      invalidPassword = true;
+      reason = "Password must contain at least 8 charicters"
     }
   };
   // checking for
@@ -89,6 +109,12 @@
             fontSize="1.6em"
             on:click={validateEmail}
           />
+          {#if invalidEmail == true}
+          <div style="display: flex; flex-direction:row; gap: 30px; margin-top: 3%">
+            <div style="width: 10px; height: 70px; background-color: #F00000; border-radius: 20px"></div>
+            <h2 style="margin-top: 1.5%; color : #F00000; font-weight:400;">Invalid email format.</h2>
+            </div>
+          {/if}
         </div>
       </div>
     {/if}
@@ -108,7 +134,7 @@
           labelFontSize="2.3em"
           width="80%"
           height="90px"
-          fontSize="3em"
+          fontSize="2em"
           on:blur={validatePassword}
         />
         <div style="margin-top: 50px;">
@@ -121,8 +147,17 @@
             fontSize="1.6em"
             on:click={submitPassword}
           />
+          {#if invalidPassword == true}
+          <div style="display: flex; flex-direction:row; gap: 30px; margin-top: 3%">
+            <div style="width: 10px; height: 70px; background-color: #F00000; border-radius: 20px"></div>
+            {#if invalidPassword == true}
+              <h2 style="margin-top: 1.5%; color : #F00000; font-weight:400;">{reason}</h2>
+            {/if}
+            </div>
+          {/if}
         </div>
       </div>
+
     {/if}
 
     {#if password && passwordSubmitted}
@@ -137,7 +172,7 @@
           labelFontSize="2.3em"
           width="80%"
           height="90px"
-          fontSize="3em"
+          fontSize="2em"
         />
         <div style="margin-top: 50px; margin-bottom: 20px;">
           <Button
@@ -160,13 +195,14 @@
           on:click={() => {
             password = "";
             passwordSubmitted = false;
+            ConfirmPassword = "";
           }}
         />
       </div>
       {#if message !== ""}
       <div style="display: flex; flex-direction:row; gap: 30px; margin-top: 3%">
-        <div style="width: 10px; height: 60px; background-color: #F00000; border-radius: 20px"></div>
-        <p style="margin-top: 1.5%; color : #F00000;">Passwords do not match</p>
+        <div style="width: 10px; height: 70px; background-color: #F00000; border-radius: 20px"></div>
+        <h2 style="margin-top: 1.5%; color : #F00000; font-weight:400;">Passwords do not match</h2>
         </div>
       {/if}
     {/if}
@@ -178,8 +214,9 @@
     <p style="font-weight: 600;">
       By clicking “I agree”, you are agreeing to our <a
         style="color: #0067E0;"
-        href="#">terms of conditions</a
-      >, and our <a style="color: #0067E0;" href="#">privacy policy</a>.
+        href="/Legal/Terms"
+        target="_blank">terms of use</a
+      >, and our <a style="color: #0067E0;"target="_blank" href="/Legal/Privacy">privacy policy</a>.
     </p>
     <Button
       text="I agree"
@@ -328,7 +365,7 @@
     class="account-settings"
     style="display:flex; justify-content: center; align-items:center; text-align:center; width: 100%; height: 100%; margin-left:0%; margin-right:0%; margin-bottom:0%;  margin-top : 10%"
   >
-    <h1>Welcome to PolyLabs</h1>
+    <h1>Welcome</h1>
   </div>
 {/if}
 
