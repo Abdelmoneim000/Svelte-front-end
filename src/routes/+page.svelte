@@ -3,7 +3,6 @@
   import Button from "../components/button.svelte";
   import chat from "../assets/Chat.svg";
   import Lessons from "../assets/Lessons.svg";
-  import FooterLogo from "../assets/FooterLogo.png";
 
   let selected = "Home"; // Default selected nav item works as a state.
   const navText = ["Home", "Sign In", "Sign Up"]; // Navigation items
@@ -27,6 +26,14 @@
 </div>
 
 <!-- Main Header -->
+
+{#if selected === "Sign In"}
+  <h1>Sign In</h1>
+{/if}
+
+{#if selected === "Sign Up"}
+  <h1>Sign Up</h1>
+{/if}
 
 {#if selected === "Home"}
 <header class="Intro">
