@@ -8,6 +8,8 @@
   import Twitter from "../assets/Twitter.svg";
   import Google from "../assets/Google.svg";
   import { goto } from "$app/navigation";
+  let currentYear = new Date().getFullYear();
+
 
     let selected = "Home"; // Default selected nav item works as a state.
     const navText = ["Home", "Sign In", "Sign Up"]; // Navigation items
@@ -15,6 +17,16 @@
     const selectItem = (item) => {
         selected = item;
     };
+
+    function scrollToSection2() {
+      const section2 = document.querySelector('.section2');
+      if (section2) {
+        section2.scrollIntoView({ behavior: 'smooth' });
+        console.log('Section 2 found')
+      } else {
+        console.error('Section 2 not found');
+      }
+    }
 </script>
 
 <!--Elements and sections go here-->
@@ -35,7 +47,7 @@
 <!-- Sign-in page -->
 {#if selected === "Sign In"}
 <header class="Intro">
-  <h1 style="font-size: 55px;">Sign into PolyLabs</h1>
+  <h1 style="font-size: 55px; font-weight: 900;">Sign into PolyLabs</h1>
   <p
     style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
   >
@@ -65,7 +77,7 @@
 <!-- Sign Up page -->
 {#if selected === "Sign Up"}
 <header class="Intro">
-  <h1 style="font-size: 55px;">Sign Up for PolyLabs</h1>
+  <h1 style="font-size: 55px; font-weight: 900;">Sign Up for PolyLabs</h1>
   <p
     style="font-weight: 600; font-size: 22px; margin-bottom: 3%; margin-top: -0.5%;"
   >
@@ -101,6 +113,7 @@
     >
         PolyLabs is a platform to quickly and efficiently learn programming.
     </p>
+
     <Button
         width="10%"
         height="50px"
@@ -109,9 +122,12 @@
         backgroundColor="#FFE37F"
         boxShadow="0px 4px 20px 0px #00000033"
         borderRadius="5px"
+
+
+        on:click={scrollToSection2}
     />
 </header>
-<section>
+<section class="section2">
     <h1>
         Meet “<span style="font-size: 50px; font-family: IBM Plex Mono;"
             >Kernel</span
@@ -193,7 +209,7 @@
 <footer>
   <div style="background-color: #C7C7C7; width: 50%; height: 5px; border-radius: 10px;"></div>
   <p style="font-size: 25px; font-weight: 600; text-align: center;">
-    © 2024 PolyLabs. All rights reserved.
+    © {currentYear} PolyLabs. All rights reserved.
   </p>
   <div class="FooterLogo">
   </div>
@@ -218,8 +234,8 @@
 
   .Menu div {
     background-color: white;
-    width: 9%;
-    height: 40px;
+    width: 12%;
+    height: 53px;
     font-weight: 700;
     font-size: 15px;
     display: flex;
@@ -244,6 +260,7 @@
 
   .Intro {
     margin-top: 3%;
+    margin-bottom : -100px;
     text-align: center;
     display: flex;
     flex-direction: column;
