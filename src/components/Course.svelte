@@ -57,7 +57,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="card" style="background-color: {clicked ? '#ECECEC' : 'var(--background-color)'};" on:click={handleClick}>
+<div class="card" style="background-color: {clicked ? '#ECECEC' : 'var(--background-color)'};" on:click={handleClick} on:click>
     <div class="title">
         <div style="border: {clicked ? '2px solid black' : 'none'};">
             <h3>{course}</h3>
