@@ -107,8 +107,65 @@ npm run test:ui
 
  - Then, you can use the component in the page.
 
+ ```JSX
+      <Button
+          text="2"
+          backgroundColor={CodingSkills === 2 ? "#C4C4C4" : "#FFFFFF"}
+          width="113px"
+          height="113px"
+          border="2px solid black"
+          fontSize="4em"
+          on:click={() => {
+            CodingSkills = 2;
+          }}
+      />
+ ```
+
+ ## Routing :
+ 
+ ### Routing pages
+ Routing is done using the `svelte-routing` package. You can find the routes in the `src/routes` folder.
+ To create a new route, Create a new folder/directory with the name of the route, and create a file called `+page.svelte` inside the folder.
+
+ ```bash
+   src/routes
+   ├── +page.svelte --> root page
+   ├── newsletter --> newsletter route
+   │   ├── +page.svelte --> file for the newsletter page
+ ```
+
+ ### Error pages
+
+ To create an error page, create a file called `+error.svelte` in the `src/routes` folder.
+
+ > [!NOTE]
+ > The error page is used to display an error message when the user triggers an error somehow. For example, when the user tries to access a page that does not exist, the error page will be display on project level like the example below :
+
  ```HTML
-    <button class="button" style="--color: {color}; --border: {border}; --boxShadow: {boxShadow};">{text}</button>
+   <script>
+      import { page } from '$app/stores';
+   </script>
+
+   <h1>{$page.status}: {$page.error.message}</h1>
+ ```
+
+
+ ```bash
+   src/routes
+   ├── +error.svelte --> error page
+ ```
+
+ please  
+ ```bash
+   src/routes
+   ├── +page.svelte --> root page
+   ├── newsletter --> newsletter route
+   │   ├── +page.svelte --> file for the newsletter page
+   └── +error.svelte --> error page
  ```
 
  ------------------------------
+
+ For more information, refer to the [documentation](https://svelte.dev/docs/introduction) and if you have any questions, feel free to reach out on Discord with the ID `sleepy_x` or here on github.
+
+ Happy coding! 🚀.
